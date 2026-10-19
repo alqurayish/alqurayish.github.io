@@ -1,60 +1,4 @@
 (() => {
-  const header = document.querySelector('.site-header');
-  const progress = document.querySelector('.progress');
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('site-nav');
-  const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
-  const desktop = window.matchMedia('(min-width: 960px)');
-
-  // Mobile navigation
-  const setMenu = (open) => {
-    toggle.setAttribute('aria-expanded', String(open));
-    nav.classList.toggle('is-open', open);
-  };
-  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
-  navLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-      setMenu(false);
-      toggle.focus();
-    }
-  });
-  desktop.addEventListener('change', () => setMenu(false));
-
-  // Header state and reading progress
-  let ticking = false;
-  const onScroll = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
-    progress.style.setProperty('--progress', ratio.toFixed(4));
-    header.classList.toggle('is-scrolled', window.scrollY > 8);
-    ticking = false;
-  };
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(onScroll);
-    }
-  }, { passive: true });
-  onScroll();
-
-  // Highlight the section currently in view
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
-  if ('IntersectionObserver' in window) {
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
-          if (link.getAttribute('href') === `#${entry.target.id}`) link.setAttribute('aria-current', 'true');
-          else link.removeAttribute('aria-current');
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach((s) => spy.observe(s));
-  }
-
   // Scroll reveals, staggered within each parent
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -143,7 +87,7 @@
 
   // Pointer spotlight on glass cards
   if (finePointer) {
-    document.querySelectorAll('.pillar, .role-body, .product, .skill-card, .cred-block, .glance, .contact-inner, .hero-stats').forEach((card) => {
+    document.querySelectorAll('.pillar, .role-body, .product, .skill-card, .cred-block, .glance, .contact-inner, .hero-card').forEach((card) => {
       card.classList.add('spot');
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
