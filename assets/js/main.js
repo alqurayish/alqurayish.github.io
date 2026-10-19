@@ -113,4 +113,55 @@
   document.querySelectorAll('[data-print]').forEach((btn) => btn.addEventListener('click', () => window.print()));
 
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Count-up for hero stats
+  const counters = document.querySelectorAll('[data-count]');
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const countIo = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+        const duration = 1400;
+        const tick = (now) => {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = `${Math.round(target * eased)}${suffix}`;
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((el) => countIo.observe(el));
+  }
+
+  // Pointer spotlight on glass cards
+  if (finePointer) {
+    document.querySelectorAll('.pillar, .role-body, .product, .skill-card, .cred-block, .glance, .contact-inner, .hero-stats').forEach((card) => {
+      card.classList.add('spot');
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+      });
+    });
+  }
+
+  // Subtle 3D tilt on the portrait
+  const frame = document.querySelector('.portrait-frame');
+  if (frame && finePointer && !reduceMotion) {
+    frame.addEventListener('pointermove', (e) => {
+      const r = frame.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      frame.style.transform = `perspective(900px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg)`;
+    });
+    frame.addEventListener('pointerleave', () => { frame.style.transform = ''; });
+  }
 })();
