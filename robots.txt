@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alqurayish.github.io/sitemap.xml
