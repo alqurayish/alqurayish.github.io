@@ -336,17 +336,18 @@ a:hover { color: var(--ink); }
 .hero-grid {
   display: grid;
   gap: 36px;
-  grid-template-areas: "copy" "portrait" "stats";
+  grid-template-areas: "id" "copy" "portrait" "stats";
 }
+.hero-id { grid-area: id; }
 .hero-copy { grid-area: copy; min-width: 0; }
 .hero-portrait { grid-area: portrait; }
 .hero-stats { grid-area: stats; }
 
 .eyebrow {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 22px;
+  margin: 0;
   font-size: .9rem;
   font-weight: 500;
   color: var(--muted);
@@ -401,21 +402,23 @@ a:hover { color: var(--ink); }
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 22px;
-  margin-top: 28px;
-  font-size: .92rem;
+  gap: 10px;
 }
 .hero-links a {
-  display: inline-block;
-  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 80%);
   color: var(--ink);
+  font-size: .92rem;
   font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: rgb(11 13 23 / 25%);
+  text-decoration: none;
+  transition: border-color .25s, color .25s, translate .35s var(--ease);
 }
-.hero-links a:hover { text-decoration-color: var(--cyan); }
-.hero-location { color: var(--muted); }
+.hero-links a:hover { border-color: rgb(91 69 224 / 45%); color: var(--violet); translate: 0 -2px; }
 
 /* Portrait */
 .hero-portrait { margin: 0; justify-self: start; width: min(100%, 330px); }
@@ -511,6 +514,8 @@ a:hover { color: var(--ink); }
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
+  align-items: center;
+  text-align: center;
   gap: 6px;
   padding: 18px 18px 16px;
 }
@@ -536,12 +541,15 @@ a:hover { color: var(--ink); }
 @media (min-width: 960px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1.5fr) minmax(0, .8fr);
-    grid-template-areas: "copy portrait" "stats stats";
+    grid-template-areas: "copy id" "copy portrait" "stats stats";
+    grid-template-rows: auto 1fr auto;
     column-gap: clamp(32px, 5vw, 72px);
-    row-gap: 56px;
+    row-gap: 24px;
     align-items: center;
   }
-  .hero-portrait { justify-self: end; }
+  .hero-id { justify-self: end; align-self: end; width: min(100%, 330px); margin-bottom: 0; }
+  .hero-portrait { justify-self: end; align-self: start; }
+  .hero-stats { margin-top: 32px; }
 }
 
 /* Entrance sequence */
