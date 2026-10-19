@@ -754,16 +754,17 @@ a:hover { color: var(--ink); }
   box-shadow: inset 0 1px 0 #fff, 0 40px 90px -44px rgb(var(--tint) / 45%);
 }
 
-/* Screenshot stage: brand-tinted backdrop with a floating browser window */
+/* Logo stage: brand-tinted backdrop with the product logo on a floating tile */
 .product-shot {
   position: relative;
-  display: block;
-  padding: clamp(14px, 3.4vw, 44px) clamp(14px, 3.4vw, 44px) 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(36px, 6vw, 64px) 16px;
   border-radius: 22px;
   overflow: hidden;
   background:
-    radial-gradient(70% 90% at 15% 0%, rgb(var(--tint) / 22%), transparent 70%),
-    radial-gradient(60% 80% at 100% 100%, rgb(var(--tint) / 16%), transparent 70%),
+    radial-gradient(50% 80% at 50% 50%, rgb(var(--tint) / 22%), transparent 70%),
+    radial-gradient(70% 90% at 15% 0%, rgb(var(--tint) / 14%), transparent 70%),
     linear-gradient(180deg, rgb(var(--tint) / 6%), rgb(var(--tint) / 12%));
   isolation: isolate;
 }
@@ -776,55 +777,23 @@ a:hover { color: var(--ink); }
     linear-gradient(rgb(var(--tint) / 9%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(var(--tint) / 9%) 1px, transparent 1px);
   background-size: 28px 28px;
-  -webkit-mask-image: linear-gradient(180deg, #000, transparent 75%);
-  mask-image: linear-gradient(180deg, #000, transparent 75%);
+  -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
+  mask-image: radial-gradient(closest-side, #000, transparent);
 }
-.shot-window {
-  display: block;
-  border-radius: 14px 14px 0 0;
-  overflow: hidden;
+.logo-tile {
+  display: grid;
+  place-items: center;
+  width: clamp(112px, 14vw, 148px);
+  aspect-ratio: 1;
+  padding: clamp(18px, 2.4vw, 26px);
+  border-radius: 30%;
   background: #fff;
-  border: 1px solid rgb(11 13 23 / 10%);
-  border-bottom: 0;
-  box-shadow: 0 -2px 0 rgb(255 255 255 / 60%) inset, 0 30px 70px -24px rgb(var(--tint) / 45%), 0 12px 24px -12px rgb(11 13 23 / 18%);
-  transform-origin: 50% 100%;
+  border: 1px solid rgb(11 13 23 / 8%);
+  box-shadow: 0 -2px 0 rgb(255 255 255 / 60%) inset, 0 30px 60px -24px rgb(var(--tint) / 55%), 0 12px 24px -12px rgb(11 13 23 / 18%);
   transition: transform .9s var(--ease);
 }
-.product:hover .shot-window { transform: translateY(-6px) scale(1.012); }
-.product-shot img {
-  width: 100%;
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.shot-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  height: 34px;
-  padding: 0 14px;
-  border-bottom: 1px solid var(--line);
-  background: #f7f7fa;
-}
-.shot-bar span { width: 10px; height: 10px; border-radius: 50%; }
-.shot-bar span:nth-child(1) { background: #ff6b6b; }
-.shot-bar span:nth-child(2) { background: #fbbf24; }
-.shot-bar span:nth-child(3) { background: #34d399; }
-.shot-bar em {
-  margin: 0 auto;
-  padding: 3px 14px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--line);
-  font-style: normal;
-  font-size: .72rem;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 60%;
-}
+.product:hover .logo-tile { transform: translateY(-6px) scale(1.04); }
+.logo-tile img { width: 100%; height: 100%; object-fit: contain; }
 
 .product-body {
   display: grid;
