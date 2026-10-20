@@ -10,7 +10,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.clarity.ms https://c.bing.com; font-src 'self'; connect-src 'self' https://*.clarity.ms https://c.bing.com; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://alqurayish.github.io/">
   <link rel="alternate" hreflang="en" href="https://alqurayish.github.io/">
@@ -52,6 +52,7 @@
   <link rel="preload" as="font" href="assets/fonts/InstrumentSerif-italic.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/portrait.webp" type="image/webp">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/clarity.js" async></script>
   <script>document.documentElement.classList.add('js');</script>
 
   <script type="application/ld+json">
