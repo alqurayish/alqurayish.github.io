@@ -1,0 +1,42 @@
+# Md Alqurayish Sharkar
+
+> AI Product Engineer, Product Manager, and Founder of D-SAi, based in Dhaka, Bangladesh. 7+ years across product management, data science, and AI product development, much of it remote with teams in the UK, Germany, UAE, and USA. Leads an 8 person team at D-SAi that has launched four live products.
+
+## Profile
+
+- [Portfolio](https://alqurayish.github.io/): experience, products, expertise, approach, credentials, and contact
+- [Resume (PDF)](https://alqurayish.github.io/CV_of_Md_Alqurayish_Sharkar.pdf)
+- [LinkedIn](https://www.linkedin.com/in/alqurayishsharkar/)
+- [GitHub](https://github.com/alqurayish)
+- Email: alqurayish@gmail.com
+- Availability: open to AI product and product management roles, consulting, and collaborations (remote)
+
+## Experience
+
+- Founder and AI Product Engineer, D-SAi (Jan 2025 – present)
+- Business Analyst, LLM Evaluator, Turing, USA (Jan 2026 – Apr 2026)
+- Data Analyst, Analytic Company GmbH, Germany (Jul 2022 – present)
+- Product Manager, Plagit, UAE (Mar 2023 – Apr 2025): full lifecycle of a hospitality staffing SaaS launched in the UK, UAE, and Italy
+- Data Analyst, MH Premier Staffing Solutions, UK (Apr 2022 – Feb 2023)
+- Reporting Analyst, Sheba Platform Ltd (Mar 2021 – Jun 2022)
+- Earlier: E-Zone HRM (2020 – 2021), bKash (2018 – 2020)
+
+## Products launched at D-SAi
+
+- [RetainCLM](https://retainclm.com): AI customer lifecycle management platform that predicts churn and acts on it
+- [InboxPulse](https://inboxpulse.d-sai.com): AI powered shared WhatsApp inbox for teams
+- [ScanRoster](https://www.scanroster.com): rosters, QR attendance, and hours for hospitality teams
+- [D-SAi AI Studio](https://aistudio.d-sai.com): multi model AI workspace for business teams
+
+## Expertise
+
+- Product management: customer discovery, product strategy, roadmaps, PRDs, go to market, pricing, OKRs and KPIs
+- AI and intelligent systems: LLM applications, RAG, embeddings, AI agents, prompt and context engineering, LLM evaluation
+- Data science and analytics: SQL, Python, predictive models, experiments, BI dashboards, churn models
+- Engineering and delivery: system design, Python backends and APIs, web and mobile delivery, AWS
+
+## Education and certifications
+
+- B.Sc. in Electrical and Electronic Engineering, Varendra University (2014 – 2018)
+- Agentic AI with LLMs (aiQUEST); Building AI Products: Prototyping Essentials (LinkedIn Learning); Career Essentials in Data Analysis (Microsoft and LinkedIn)
+- In progress: AI Engineering Career Track and Mastering AWS and DevOps (Poridhi.io)
