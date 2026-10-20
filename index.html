@@ -10,6 +10,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://alqurayish.github.io/">
   <link rel="alternate" hreflang="en" href="https://alqurayish.github.io/">
   <link rel="alternate" hreflang="x-default" href="https://alqurayish.github.io/">
@@ -95,8 +97,9 @@
           { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Building AI Products: Prototyping Essentials", "recognizedBy": { "@type": "Organization", "name": "LinkedIn Learning" } },
           { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Career Essentials in Data Analysis", "recognizedBy": { "@type": "Organization", "name": "Microsoft and LinkedIn" } }
         ],
-        "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
-        "homeLocation": { "@type": "Place", "name": "Dhaka, Bangladesh" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressRegion": "Dhaka Division", "addressCountry": "BD" },
+        "homeLocation": { "@type": "Place", "name": "Dhaka, Bangladesh", "geo": { "@type": "GeoCoordinates", "latitude": 23.8103, "longitude": 90.4125 }, "hasMap": "https://www.google.com/maps/place/Dhaka,+Bangladesh" },
+        "workLocation": { "@type": "Place", "name": "Remote, worldwide" },
         "nationality": { "@type": "Country", "name": "Bangladesh" },
         "knowsLanguage": ["English", "Bengali"],
         "knowsAbout": ["AI product development", "Product management", "Product strategy", "Customer discovery", "Large language models", "LLM evaluation", "Retrieval augmented generation", "AI agents", "Prompt engineering", "Machine learning", "Data science", "Data analysis", "Churn prediction", "SaaS", "Python", "AWS"],
@@ -110,6 +113,8 @@
         "@id": "https://d-sai.com/#organization",
         "name": "D-SAi",
         "url": "https://d-sai.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+        "areaServed": "Worldwide",
         "founder": { "@id": "https://alqurayish.github.io/#person" }
       },
       {
@@ -141,7 +146,7 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero-wrap">
       <div class="hero-card hero-grid">
-        <p class="eyebrow hero-id" data-enter style="--d:0"><span class="hero-name">Md Alqurayish Sharkar</span> AI Product Engineer · Product Manager · Founder, D-SAi</p>
+        <p class="eyebrow hero-id" data-enter style="--d:0"><span class="hero-name">Md Alqurayish Sharkar</span> AI Product Engineer · Founder, D-SAi</p>
 
         <div class="hero-copy">
           <h1 id="hero-title" class="hero-title" data-enter style="--d:1">
@@ -378,9 +383,9 @@
         <div class="products">
           <!-- RetainCLM -->
           <article class="product reveal" aria-labelledby="p-retainclm" style="--tint: 16 185 129">
-            <a class="product-shot" href="https://retainclm.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="product-shot" href="https://retainclm.com" target="_blank" rel="noopener" tabindex="-1">
               <span class="logo-tile">
-                <img src="assets/img/logo-retainclm.png" width="256" height="256" loading="lazy" decoding="async" alt="">
+                <img src="assets/img/logo-retainclm.png" width="256" height="256" loading="lazy" decoding="async" alt="RetainCLM logo">
               </span>
             </a>
             <div class="product-body">
@@ -422,9 +427,9 @@
 
           <!-- InboxPulse -->
           <article class="product reveal" aria-labelledby="p-inboxpulse" style="--tint: 20 150 140">
-            <a class="product-shot" href="https://inboxpulse.d-sai.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="product-shot" href="https://inboxpulse.d-sai.com" target="_blank" rel="noopener" tabindex="-1">
               <span class="logo-tile">
-                <img src="assets/img/logo-inboxpulse.png" width="256" height="256" loading="lazy" decoding="async" alt="">
+                <img src="assets/img/logo-inboxpulse.png" width="256" height="256" loading="lazy" decoding="async" alt="InboxPulse logo">
               </span>
             </a>
             <div class="product-body">
@@ -465,9 +470,9 @@
 
           <!-- ScanRoster -->
           <article class="product reveal" aria-labelledby="p-scanroster" style="--tint: 37 99 235">
-            <a class="product-shot" href="https://www.scanroster.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="product-shot" href="https://www.scanroster.com" target="_blank" rel="noopener" tabindex="-1">
               <span class="logo-tile">
-                <img src="assets/img/logo-scanroster.svg" width="256" height="256" loading="lazy" decoding="async" alt="">
+                <img src="assets/img/logo-scanroster.svg" width="256" height="256" loading="lazy" decoding="async" alt="ScanRoster logo">
               </span>
             </a>
             <div class="product-body">
@@ -508,9 +513,9 @@
 
           <!-- AI Studio -->
           <article class="product reveal" aria-labelledby="p-aistudio" style="--tint: 202 160 60">
-            <a class="product-shot" href="https://aistudio.d-sai.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="product-shot" href="https://aistudio.d-sai.com" target="_blank" rel="noopener" tabindex="-1">
               <span class="logo-tile">
-                <img src="assets/img/logo-aistudio.svg" width="256" height="256" loading="lazy" decoding="async" alt="">
+                <img src="assets/img/logo-aistudio.svg" width="256" height="256" loading="lazy" decoding="async" alt="D-SAi AI Studio logo">
               </span>
             </a>
             <div class="product-body">
@@ -733,6 +738,7 @@
             <li><a href="https://github.com/alqurayish" target="_blank" rel="me noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
             <li><a href="https://d-sai.com" target="_blank" rel="noopener">D-SAi<span class="visually-hidden"> (opens in a new tab)</span></a></li>
           </ul>
+          <address class="contact-place">Based in <a href="https://www.google.com/maps/place/Dhaka,+Bangladesh" target="_blank" rel="noopener">Dhaka, Bangladesh<span class="visually-hidden"> (opens in a new tab)</span></a> · Working remotely with teams worldwide</address>
           </div>
         </div>
       </div>
@@ -740,9 +746,65 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span data-year>2026</span> Md Alqurayish Sharkar</p>
-      <a href="#top">Back to top</a>
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <p class="footer-name">Md Alqurayish Sharkar</p>
+            <p class="footer-role">AI Product Engineer · Founder, D-SAi</p>
+            <p class="footer-about">7+ years across product management, data science, and AI. I lead an 8 person team at D-SAi that has launched four live products, and I have delivered for teams in the UK, Germany, UAE, and USA.</p>
+            <p class="footer-meta">Dhaka, Bangladesh · Remote worldwide<br><a href="mailto:alqurayish@gmail.com">alqurayish@gmail.com</a></p>
+            <ul class="footer-social" role="list">
+              <li><a href="https://www.linkedin.com/in/alqurayishsharkar/" target="_blank" rel="me noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+              <li><a href="https://github.com/alqurayish" target="_blank" rel="me noopener">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+              <li><a href="https://wa.me/8801773058333" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            </ul>
+          </div>
+
+          <nav class="footer-col" aria-labelledby="f-exp">
+            <h2 id="f-exp">Experience</h2>
+            <ul role="list">
+              <li><a href="#experience">Founder &amp; AI Product Engineer</a><span>D-SAi · 2025 – Present</span></li>
+              <li><a href="#experience">Business Analyst, LLM Evaluator</a><span>Turing, USA · 2026</span></li>
+              <li><a href="#experience">Data Analyst</a><span>Analytic Company GmbH, Germany · 2022 – Present</span></li>
+              <li><a href="#experience">Product Manager</a><span>Plagit, UAE · 2023 – 2025</span></li>
+              <li><a href="#experience">Data Analyst</a><span>MH Premier Staffing Solutions, UK · 2022 – 2023</span></li>
+              <li><a href="#experience">Reporting Analyst</a><span>Sheba Platform Ltd · 2021 – 2022</span></li>
+              <li><a href="#experience">Earlier experience</a><span>E-Zone HRM, bKash · 2018 – 2021</span></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-col" aria-labelledby="f-products">
+            <h2 id="f-products">Products</h2>
+            <ul role="list">
+              <li><a href="https://retainclm.com" target="_blank" rel="noopener">RetainCLM<span class="visually-hidden"> (opens in a new tab)</span></a><span>Customer retention</span></li>
+              <li><a href="https://inboxpulse.d-sai.com" target="_blank" rel="noopener">InboxPulse<span class="visually-hidden"> (opens in a new tab)</span></a><span>Customer messaging</span></li>
+              <li><a href="https://www.scanroster.com" target="_blank" rel="noopener">ScanRoster<span class="visually-hidden"> (opens in a new tab)</span></a><span>Workforce management</span></li>
+              <li><a href="https://aistudio.d-sai.com" target="_blank" rel="noopener">D-SAi AI Studio<span class="visually-hidden"> (opens in a new tab)</span></a><span>AI workspace</span></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-col" aria-labelledby="f-explore">
+            <h2 id="f-explore">Explore</h2>
+            <ul role="list">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#expertise">Expertise</a></li>
+              <li><a href="#approach">Approach</a></li>
+              <li><a href="#credentials">Credentials</a></li>
+              <li><a href="#resume">Resume</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="CV_of_Md_Alqurayish_Sharkar.pdf" download>Download resume (PDF)</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span data-year>2026</span> Md Alqurayish Sharkar · Dhaka, Bangladesh</p>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
     </div>
   </footer>
 
