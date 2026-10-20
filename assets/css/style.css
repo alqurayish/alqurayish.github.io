@@ -891,6 +891,7 @@ a:hover { color: var(--ink); }
   background: rgb(11 13 23 / 3%);
   transition: border-color .3s, background-color .3s;
 }
+.product-body > .case { grid-column: 1 / -1; margin: 0; }
 .case[open] { background: rgb(255 255 255 / 70%); border-color: rgb(91 69 224 / 30%); }
 .case summary {
   display: flex;
