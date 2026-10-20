@@ -946,6 +946,7 @@ a:hover { color: var(--ink); }
   --tint-ink: color-mix(in srgb, rgb(var(--tint)) 72%, #0b0d17);
   overflow: hidden;
   padding: clamp(24px, 3vw, 34px);
+  text-align: center;
   transition: translate .5s var(--ease), border-color .3s, box-shadow .5s var(--ease);
 }
 .skill-card::after {
@@ -967,7 +968,7 @@ a:hover { color: var(--ink); }
 }
 .skill-card:hover::after { transform: scale(1.15); }
 
-.skill-head { display: flex; align-items: center; gap: 14px; }
+.skill-head { display: flex; align-items: center; justify-content: center; gap: 14px; }
 .skill-icon {
   flex: none;
   display: grid;
@@ -1005,7 +1006,7 @@ a:hover { color: var(--ink); }
   text-transform: uppercase;
   color: var(--tint-ink);
 }
-.skill-card .chips { margin-top: 18px; }
+.skill-card .chips { margin-top: 18px; justify-content: center; }
 .skill-card .chips li { background: rgb(255 255 255 / 75%); }
 .skill-card .chips li:hover { border-color: rgb(var(--tint) / 45%); color: var(--tint-ink); background: rgb(var(--tint) / 8%); }
 
@@ -1026,7 +1027,8 @@ a:hover { color: var(--ink); }
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 2px;
   min-height: 66px;
   padding: 11px 14px;
@@ -1035,7 +1037,7 @@ a:hover { color: var(--ink); }
   background: rgb(11 13 23 / 4%);
   color: var(--ink-2);
   font: 600 .92rem var(--display);
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: background-color .3s, color .3s, border-color .3s, transform .4s var(--ease), box-shadow .4s var(--ease);
 }
@@ -1049,7 +1051,7 @@ a:hover { color: var(--ink); }
 }
 .approach-steps button[aria-selected="true"] span { color: rgb(255 255 255 / 80%); }
 
-.approach-panel { padding: 8px 6px 6px; }
+.approach-panel { padding: 8px 6px 6px; text-align: center; }
 .approach-panel h3 {
   font-family: var(--display);
   font-weight: 600;
@@ -1057,7 +1059,7 @@ a:hover { color: var(--ink); }
   letter-spacing: -0.035em;
   margin-bottom: 10px;
 }
-.approach-panel p { font-size: 1.05rem; color: var(--ink-2); max-width: 62ch; }
+.approach-panel p { font-size: 1.05rem; color: var(--ink-2); max-width: 62ch; margin-inline: auto; }
 html:not(.js) .approach-panel + .approach-panel { margin-top: 20px; }
 @media (prefers-reduced-motion: no-preference) {
   .approach-panel:not([hidden]) { animation: enter .6s var(--ease); }
