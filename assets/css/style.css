@@ -1162,6 +1162,10 @@ html:not(.js) .approach-panel + .approach-panel { margin-top: 20px; }
   transition: background-size .5s var(--ease), color .3s;
 }
 .contact-email:hover { color: var(--ink); background-size: 100% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (min-width: 960px) {
+  .contact-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .contact-reach .contact-email { margin-top: 0; font-size: clamp(1.6rem, .6rem + 1.9vw, 2.5rem); }
+}
 .contact-links { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
 .contact-links a {
   display: inline-flex;
