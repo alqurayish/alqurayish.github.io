@@ -1116,6 +1116,10 @@ html:not(.js) .approach-panel + .approach-panel { margin-top: 20px; }
 .glance > div:last-child { border-bottom: 0; }
 .glance dt { color: var(--muted); font-size: .88rem; }
 .glance dd { font-weight: 500; }
+@media (max-width: 479px) {
+  .glance > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .footer-col a { display: inline-block; padding-block: 4px; }
+}
 
 @media (min-width: 960px) {
   .resume-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; }
@@ -1149,7 +1153,7 @@ html:not(.js) .approach-panel + .approach-panel { margin-top: 20px; }
   margin-top: 32px;
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(1.45rem, .8rem + 3.4vw, 3.2rem);
+  font-size: clamp(1.05rem, .35rem + 3.9vw, 3.2rem);
   line-height: 1.15;
   letter-spacing: -0.035em;
   color: var(--ink);
